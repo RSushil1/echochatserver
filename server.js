@@ -39,7 +39,6 @@ const io = new Server(server, {
   cors: {
     origin: '*',
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
-    allowedHeaders: ['my-custom-header'],
     credentials: true
   }
 }); // Pass the HTTP server instance to the Socket.IO Server
