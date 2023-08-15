@@ -35,7 +35,7 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }));
 // Socket.IO configuration
 const io = new Server(server, {
     cors: {
-      origin: 'https://echochat.vercel.app/chatroom/user',
+      origin: 'https://echochat.vercel.app',
       methods: ['GET', 'POST'],
       allowedHeaders: ['my-custom-header'],
       credentials: true
