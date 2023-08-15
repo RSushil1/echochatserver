@@ -24,7 +24,7 @@ const server = http.createServer(app); // Create HTTP server instance
 
 //middelwares
 app.use(cors({
-  origin: 'https://echochat.vercel.app',
+  origin: '*',
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   credentials: true,
 }));
@@ -37,7 +37,7 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }));
 // Socket.IO configuration
 const io = new Server(server, {
   cors: {
-    origin: 'https://echochat.vercel.app',
+    origin: '*',
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
     allowedHeaders: ['my-custom-header'],
     credentials: true
