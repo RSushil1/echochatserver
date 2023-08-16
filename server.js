@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import https from 'https'; // Import the http module
+import http from 'http'; // Import the http module
 import { Server } from 'socket.io';
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoute.js";
@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 8000;
 
 //rest object
 const app = express();
-const server = https.createServer(app); // Create HTTP server instance
+const server = http.createServer(app); // Create HTTP server instance
 
 
 //middelwares
