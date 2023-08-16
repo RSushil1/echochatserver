@@ -38,7 +38,8 @@ const io = new Server(server, {
   cors: {
     origin: 'https://echochat.vercel.app',
     allowedHeaders: ["my-custom-header"],
-    credentials: true
+    credentials: true,
+    methods: ['GET','POST'],
   }
 }); // Pass the HTTP server instance to the Socket.IO Server
 
