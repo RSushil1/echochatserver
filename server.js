@@ -21,6 +21,7 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 const server = http.createServer(app); // Create HTTP server instance
 
+app.set('trust proxy', 1);
 
 //middelwares
 app.use(cors());
