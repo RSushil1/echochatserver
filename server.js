@@ -26,16 +26,16 @@ const server = https.createServer(app); // Create HTTP server instance
 app.use(cors({
   origin: 'https://echochat.vercel.app'
 }));
-app.use(express.json());
+// app.use(express.json());
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "https://echochat.vercel.app"); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-// // Increase payload size limits for JSON and URL-encoded bodies
-// app.use(express.json({ limit: '10mb' }));
-// app.use(express.urlencoded({ limit: '10mb', extended: true }));
+// Increase payload size limits for JSON and URL-encoded bodies
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 // Socket.IO configuration
 const io = new Server(server, {
