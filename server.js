@@ -37,9 +37,9 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }));
 // Socket.IO configuration
 const io = new Server(server, {
   cors: {
-    origin: '*',
+    origin: 'https://echochat.vercel.app/',
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
-    allowedHeaders: "abcd",
+    allowedHeaders: ["abcd"],
     credentials: true
   }
 }); // Pass the HTTP server instance to the Socket.IO Server
