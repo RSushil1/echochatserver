@@ -37,6 +37,7 @@ const io = new Server(server, {
     origin: 'https://echochat.vercel.app',
     allowedHeaders: ["my-custom-header"],
     credentials: true,
+    transports: ['websocket',  'polling'],
     methods: ['GET','POST'],
   }
 }); // Pass the HTTP server instance to the Socket.IO Server
