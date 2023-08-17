@@ -23,9 +23,7 @@ const server = http.createServer(app); // Create HTTP server instance
 
 
 // //middelwares
-app.use(cors({
-    origin: 'wss://echochat.vercel.app'
-  }));
+app.use(cors());
 
 // Middleware to set CORS headers
 app.use(function(req, res, next) {
