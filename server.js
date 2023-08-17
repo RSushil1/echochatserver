@@ -24,8 +24,7 @@ const server = http.createServer(app); // Create HTTP server instance
 
 //middelwares
 app.use(cors({
-  origin: '*',
-  methods:"*"
+  origin: 'https://echochat.vercel.app',
 }));
 // app.use(express.json());
 
