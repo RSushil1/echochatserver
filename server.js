@@ -24,7 +24,7 @@ const server = http.createServer(app); // Create HTTP server instance
 
 // //middelwares
 app.use(cors({
-    origin: 'https://echochat.vercel.app'
+    origin: 'wss://echochat.vercel.app'
   }));
 
 // Middleware to set CORS headers
@@ -42,7 +42,7 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }));
 // Socket.IO configuration
 const io = new Server(server, {
     cors: {
-      origin: 'https://echochat.vercel.app',
+      origin: 'wss://echochat.vercel.app',
       methods: ['GET', 'POST'],
       allowedHeaders: ['my-custom-header'],
       credentials: true
