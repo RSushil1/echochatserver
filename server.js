@@ -22,10 +22,17 @@ const app = express();
 const server = http.createServer(app); // Create HTTP server instance
 
 
-//middelwares
-app.use(cors({
-    origin: 'https://echochat.vercel.app'
-  }));
+// //middelwares
+// app.use(cors({
+//     origin: 'https://echochat.vercel.app'
+//   }));
+
+// Middleware to set CORS headers
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://echochat.vercel.app"); // Update with your client domain
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 // app.use(express.json());
 
 // Increase payload size limits for JSON and URL-encoded bodies
