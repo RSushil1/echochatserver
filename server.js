@@ -26,9 +26,11 @@ const server = http.createServer(app); // Create HTTP server instance
 app.use(cors());
 
 // Middleware to set CORS headers
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://echochat.vercel.app"); // Update with your client domain
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
   next();
 });
 // app.use(express.json());
