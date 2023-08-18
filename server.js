@@ -28,12 +28,11 @@ app.use(cors());
 // Middleware to set CORS headers
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "https://echochat.vercel.app");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  res.header("Access-Control-Allow-Headers", "my-custom-header");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, my-custom-header");
   res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
   next();
 });
+
 // app.use(express.json());
 
 // Increase payload size limits for JSON and URL-encoded bodies
