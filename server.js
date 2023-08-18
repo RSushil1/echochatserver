@@ -50,6 +50,7 @@ const io = new Server(server, {
   }); // Pass the HTTP server instance to the Socket.IO Server
 
 io.on('connection', socket => {
+  res.header("Access-Control-Allow-Origin", "https://echochat.vercel.app")
   const id = socket.handshake.query.id;
   socket.join(id);
 
