@@ -44,13 +44,13 @@ const io = new Server(server, {
   cors: {
     origin: 'https://echochat.vercel.app',
     methods: ['GET', 'POST'],
+    "Access-Control-Allow-Origin":"https://echochat.vercel.app",
     allowedHeaders: ['my-custom-header'],
   credentials: true
     }
   }); // Pass the HTTP server instance to the Socket.IO Server
 
 io.on('connection', socket => {
-  res.header("Access-Control-Allow-Origin", "https://echochat.vercel.app")
   const id = socket.handshake.query.id;
   socket.join(id);
 
